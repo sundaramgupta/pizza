@@ -1,13 +1,23 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.views import View
-from .models import Order, MenuItem
+from .models import Position, Order
+from .forms import OrderForm
 
 # Create your views here.
-def index(request):
-	customer_name = MenuItem.objects.all()
-	context = {'pizza' : customer_name}
-	return render(request, 'index.html', context)
+def order(request):
+    context = {'order': Order.objects.all()}
+    return render(request, "menu/order.html", context)
 
-def orders(request):
-	return HttpResponse("This is your order")
+def form(request):
+	if request.method == "GET":
+		form = OrderForm()
+		return render(request, "menu/form.html", {'form':form})
+	else:
+		form = OrderForm(request.POST)
+		if form.is_valid():
+			form.save()
+		return redirect('/order')
+
+
+

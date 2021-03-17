@@ -1,16 +1,17 @@
 from django.db import models
 
 # Create your models here.
-class MenuItem(models.Model):
-    name = models.CharField(max_length=20)
-    price = models.DecimalField(max_digits=5, decimal_places=2)
-    size = models.CharField(max_length=5, blank=True)
 
+class Position(models.Model):
+    title = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.title
 
 class Order(models.Model):
-    #customer = models.ForeignKey(on_delete=models.CASCADE), 
-    timestamp = models.DateTimeField(auto_now=True)
-
-
-
-
+    fullname = models.CharField(max_length=100)
+    pizza_name = models.CharField(max_length=10)
+    mobile= models.CharField(max_length=15)
+    email= models.CharField(max_length=15)
+    size= models.ForeignKey(Position,on_delete=models.CASCADE)
+    

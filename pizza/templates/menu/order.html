@@ -1,0 +1,26 @@
+{% extends "menu/base.html" %}
+
+
+{% block content %}
+<table class="table table-borderless">
+    <thead class="border-bottom font-weight-bold">
+        <tr>
+            <td>Full Name</td>
+            <td>Mobile</td>
+            <td>Size</td>
+            <td>Pizza Name</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for o in order %}
+            <tr>
+                <td>{{o.fullname}}</td>
+                <td>{{o.mobile}}</td>
+                <td>{{o.size}}</td>
+                <td>{{o.pizza_name}}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock content %}
