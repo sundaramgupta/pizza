@@ -12,12 +12,12 @@
         </tr>
     </thead>
     <tbody>
-        {% for i in pizza %}
+        {% for result in results %}
             <tr>
-                <td>{{i.fullname}}</td>
-                <td>{{i.mobile}}</td>
-                <td>{{i.size}}</td>
-                <td>{{i.pizza_name}}</td>
+                <td>{{result.fullname}}</td>
+                <td>{{result.mobile}}</td>
+                <td>{{result.size}}</td>
+                <td>{{result.pizza_name}}</td>
             </tr>
         {% endfor %}
     </tbody>

@@ -5,6 +5,6 @@ from . import views
 urlpatterns = [
 	path('', views.form, name='form'),
     path('order',views.order,name='order'),
-    path('searchbar',views.searchbar,name='searchbar')
+    path('search_bar',views.search_bar,name='search_bar')
 
 ]

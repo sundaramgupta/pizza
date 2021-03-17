@@ -19,11 +19,11 @@ def form(request):
 			form.save()
 		return HttpResponse("You have ordered your pizza")
 
-def searchbar(request):
+def search_bar(request):
 	if request.method=='GET':
 		search = request.GET.get('q')
-		p = Order.objects.all().filter(fullname=search)
-		return render(request, 'menu/searchbar.html', { 'pizza':p})
+		results = Order.objects.all().filter(fullname=search)
+		return render(request, 'menu/search_bar.html', {'results':results})
 
 
 
