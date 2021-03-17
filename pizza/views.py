@@ -17,7 +17,7 @@ def form(request):
 		form = OrderForm(request.POST)
 		if form.is_valid():
 			form.save()
-		return redirect('/order')
+		return HttpResponse("You have ordered your pizza")
 
 
 
