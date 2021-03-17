@@ -14,4 +14,3 @@ class Order(models.Model):
     mobile= models.CharField(max_length=15)
     email= models.CharField(max_length=15)
     size= models.ForeignKey(Position,on_delete=models.CASCADE)
-    
