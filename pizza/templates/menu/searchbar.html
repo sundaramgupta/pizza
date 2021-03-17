@@ -1,10 +1,7 @@
 {% extends "menu/base.html" %}
 
-
 {% block content %}
-<form action = "{% url 'searchbar' %}" method= "get">
-    <input type="text" name="q">
-    <button class="btn btn-primary" type="submit"> Search </button>
+
 <table class="table table-borderless">
     <thead class="border-bottom font-weight-bold">
         <tr>
@@ -15,15 +12,15 @@
         </tr>
     </thead>
     <tbody>
-        {% for o in order %}
+        {% for i in pizza %}
             <tr>
-                <td>{{o.fullname}}</td>
-                <td>{{o.mobile}}</td>
-                <td>{{o.size}}</td>
-                <td>{{o.pizza_name}}</td>
+                <td>{{i.fullname}}</td>
+                <td>{{i.mobile}}</td>
+                <td>{{i.size}}</td>
+                <td>{{i.pizza_name}}</td>
             </tr>
         {% endfor %}
     </tbody>
 </table>
 
-{% endblock content %}
+{% endblock %}
